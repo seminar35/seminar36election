@@ -1,0 +1,106 @@
+@import url("https://v1.fontapi.ir/css/VazirFD");
+
+body {
+  background: #d5d5d5;
+  font-family: Vazir FD;
+  color: #fafafa;
+}
+
+.scoreboard {
+  background: #333;
+  width: 700px;
+  max-width: 100%;
+  margin: 70px auto;
+  box-shadow: 0 4px 0px #333;
+  border-radius: 15px;
+}
+
+.header {
+  padding: 5px 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  border-radius: 15px 15px 0 0;
+  border-bottom: solid 2px #444;
+}
+
+.header h1 {
+  flex-grow: 1;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.player {
+  display: flex;
+  direction: rtl;
+  font-size: 1.2em;
+  border-bottom: solid 2px #444;
+}
+
+.player-name {
+  flex-grow: 1;
+  padding: 20px 20px 10px 10px;
+}
+
+.player-score {
+  width: 15%;
+}
+
+.counter {
+  display: flex;
+}
+
+.counter-score {
+  flex-grow: 1;
+  background: #2b2b2b;
+  color: #fafafa;
+  text-align: center;
+  font-family: Vazir FD;
+  padding: 10px;
+  font-size: 1.5em;
+  border-radius: 0px 0px 0px 10px;
+}
+
+.stats {
+  direction: rtl;
+  margin-top: 0;
+  font-weight: normal;
+}
+
+.stats td:first-child {
+  text-align: right;
+  font-weight: normal;
+  color: #888;
+  font-size: 0.9em;
+}
+
+.stats td:last-child {
+  text-align: right;
+}
+
+.header .stats,
+.header .stopwatch {
+  width: 170px;
+}
+
+.stopwatch {
+  padding: 15px 10px 5px 10px;
+  margin: -5px -5px -5px 10px;
+  background: #2f2f2f;
+  border-radius: 15px 15px 0 0;
+}
+
+.stopwatch-time {
+  font-family: monospace;
+  font-size: 2em;
+}
+
+.stopwatch h2 {
+  font-family: Vazir FD;
+  font-size: 0.7em;
+  margin: 0px 0px 5px 0px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #888;
+}
