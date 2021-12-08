@@ -19,7 +19,7 @@ def consoleLog(log):
 
 
 ### variables ###
-BASE_URL = "https://helli1.iranlms.org/"
+BASE_URL = "https://helli1.iranlms.org"
 SETTINGS = json.load(open("settings.json"))
 session = requests.session()
 
