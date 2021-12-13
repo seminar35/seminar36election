@@ -19,21 +19,31 @@ socket.on("information", (payload) => {
 
     render: function () {
       return (
-        <div className="scoreboard">
-          <Header candidates={this.state.candidates} />
-          <div className="candidates">
-            {this.state.candidates.map(
-              function (player, index) {
-                return (
-                  <Player
-                    name={player.name}
-                    vote={player.vote}
-                    key={player.name}
-                    onScoreChange={(delta) => this.onScoreChange(index, delta)}
-                  />
-                );
-              }.bind(this)
-            )}
+        <div>
+          {status === "freezing" && (
+            <img
+              className="freeze"
+              src="https://s4.uupload.ir/files/transparent-snowflake-border-11_auto_x2_t0oy.png"
+            />
+          )}
+          <div className="scoreboard">
+            <Header candidates={this.state.candidates} />
+            <div className="candidates">
+              {this.state.candidates.map(
+                function (player, index) {
+                  return (
+                    <Player
+                      name={player.name}
+                      vote={player.vote}
+                      key={player.name}
+                      onScoreChange={(delta) =>
+                        this.onScoreChange(index, delta)
+                      }
+                    />
+                  );
+                }.bind(this)
+              )}
+            </div>
           </div>
         </div>
       );
