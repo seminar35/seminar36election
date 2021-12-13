@@ -2,6 +2,11 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,node
 
+### my ignores ###
+data.json
+data.xlsx
+settings.json
+
 ### Node ###
 # Logs
 logs
