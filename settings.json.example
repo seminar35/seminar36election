@@ -3,8 +3,10 @@
     "username": "your moodle username here",
     "password": "your moodle password here"
   },
-  "electionRoomID": "the id of the room",
-  "status": "your server status(operating/freezing)"
-  "port": "your port here(it is optional)"
+  "electionRoomID": "election room id here",
+  "status": "status of bot (operating/freezing)",
+  "port": "your running port",
+  "waitTime": "the wait time between each checkout",
+  "deadline": "timer deadline here"
 }
 
