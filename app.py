@@ -45,7 +45,10 @@ async def update():
 
     if SETTINGS["status"] == "freezing":
         consoleLog("status is freezing. send the old data")
-        await sio.emit(json.load(open("data.json")))
+        parsed_data = json.load(open("data.json"))
+        parsed_data["status"] = "freezing"
+        parsed_data["deadline"] = SETTINGS["deadline"]
+        await sio.emit("information", parsed_data)
         return
 
     r = session.get(
@@ -67,6 +70,10 @@ async def update():
 
     ### parse excel ###
     parsed_data = parse("data.xlsx")
+
+    parsed_data["status"] = SETTINGS["status"]
+    parsed_data["deadline"] = SETTINGS["deadline"]
+
     await sio.emit("information", parsed_data)
     consoleLog("new information has sent to the client")
 
@@ -77,7 +84,7 @@ async def update():
 def main():
     while True:
         asyncio.run(update())
-        sleep(5)
+        sleep(SETTINGS["waitTime"])
 
 
 ### send data via socket.io ###
@@ -102,6 +109,8 @@ async def connect(sid, environ):
         await update()
 
     data = json.load(open("data.json"))
+    data["status"] = SETTINGS["status"]
+    data["deadline"] = SETTINGS["deadline"]
     await sio.emit("information", data)
 
 

@@ -5,6 +5,8 @@ socket.on("connect", () => {
 });
 
 socket.on("information", (payload) => {
+  const { status, deadline } = payload;
+
   const Scoreboard = React.createClass({
     getInitialState: function () {
       return payload;
@@ -81,7 +83,7 @@ socket.on("information", (payload) => {
   function refreshTime() {
     var now = new Date();
     var result =
-      ("0" + (17 - now.getHours())).slice(-2) +
+      ("0" + (deadline - now.getHours())).slice(-2) +
       ":" +
       ("0" + (59 - now.getMinutes())).slice(-2) +
       ":" +
